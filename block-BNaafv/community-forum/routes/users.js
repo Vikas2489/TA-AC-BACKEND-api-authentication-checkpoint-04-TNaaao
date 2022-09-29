@@ -96,16 +96,5 @@ router.delete("/:username/follow", async function(req, res, next) {
     }
 });
 
-// block user
-// router.post('/:username/block', async function(req, res, next) {
-//     let username = req.params.username;
-//     let currentLoggedInUser = await User.findById(req.user.userId);
-//     if (currentLoggedInUser.isAdmin) {
-//         let updatedUser = await User.findOneAndUpdate();
-//     } else {
-//         return res.status(422).json({ err: 'You are not an admin' });
-//     }
-// });
-
 
 module.exports = router;

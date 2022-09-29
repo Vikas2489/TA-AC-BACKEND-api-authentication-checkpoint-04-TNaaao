@@ -6,13 +6,12 @@ module.exports = {
             if (token) {
                 let payload = await jwt.verify(token, process.env.SECRET);
                 req.user = payload;
-                next();
+                return next();
             } else {
-                res.json({ error: "token is required" });
+                return res.json({ er: "token is required" });
             }
         } catch (error) {
             return error;
         }
-
     }
 }
