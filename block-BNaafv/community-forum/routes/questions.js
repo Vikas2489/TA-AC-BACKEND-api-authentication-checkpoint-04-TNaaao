@@ -104,11 +104,11 @@ router.get("/:questionId/answers", async(req, res, next) => {
     let questionId = req.params.questionId;
     try {
         if (isValidObjectId(questionId)) {
-            // ask it from sir how to do it, why it was returning the promise
+            // ask it from sir how to do it, why it was returning the pending promise  (nested population)
 
             // let question = await Question.findById(questionId).populate('answers').exec();
-            // let q = question.answers.map(async function(ans) {
-            //     return await ans.populate('author');
+            // let q = question.answers.map(function(ans) {
+            //     return ans.populate('author');
             // });
             // console.log(q);
             let answersArr = await Answer.find({ questionId }).populate('author');
